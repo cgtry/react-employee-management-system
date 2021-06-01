@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import { Col, Row } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Row style={{ height: "100vh" }}>
+      <Col xs={0} md={3} className="bg-primary d-none d-md-block"></Col>
+      <Col xs={12} md={6} className="bg-dark"></Col>
+      <Col xs={0} md={3} className="bg-info  d-none d-md-block"></Col>
+    </Row>
   );
 }
 
