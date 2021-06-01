@@ -10,14 +10,15 @@ import { Member3 } from "./views/Member3";
 // TEAM LEADER
 function App() {
   return (
-    <div>
-      <Member1 />
-
-      <div className="mb-5"></div>
-      <Member2 />
-
-      <div className="mb-5"></div>
-      <Member3 />
+    <div className="container-fluid">
+      <div className="row" style={{ height: "100vh" }}>
+        <div className="col-12 col-md-6 bg-dark text-light d-flex align-items-center justify-content-center">
+          <Member1></Member1>
+        </div>
+        <div className="col-12 col-md-6 bg-secondary text-light d-flex align-items-center justify-content-center">
+          <Member2></Member2>
+        </div>
+      </div>
     </div>
   );
 }
