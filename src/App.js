@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Page1 } from "./pages/Page1";
-import { Page2 } from "./pages/Page2";
-import { Page3 } from "./pages/Page3";
-
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./components/Home";
+import { AboutUs } from "./components/AboutUs";
+import { Project } from "./components/Project";
+import { ContactUs } from "./components/ContactUs";
+import { AppNavBar } from "./common/AppNavBar";
 import {
   Button,
   Form,
@@ -17,46 +18,27 @@ import {
 function App() {
   return (
     <Router>
-      {/** NAVIGATION LOGICc */}
-      <Navbar bg="dark" expand="lg" variant="dark">
-        <Navbar.Brand as={Link} to="/">
-          Project Book
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/page1">
-              Page1
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/page2">
-              Page2
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/page3">
-              Page3
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <AppNavBar />
 
       <Switch>
-        <Route path="/page1">
-          <Page1 />
+        <Route path="/home">
+          <Home />
         </Route>
 
-        <Route path="/page2">
-          <Page2 />
+        <Route path="/about-us">
+          <AboutUs />
         </Route>
 
-        <Route path="/page3">
-          <Page3 />
+        <Route path="/project">
+          <Project />
+        </Route>
+
+        <Route path="/contact-us">
+          <ContactUs />
         </Route>
 
         <Route path="/">
-          <Page1 />
+          <Home />
         </Route>
       </Switch>
     </Router>
