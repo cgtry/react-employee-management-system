@@ -17,7 +17,7 @@ import {
 function App() {
   return (
     <Router>
-      {/** NAVIGATION LOGIC */}
+      {/** NAVIGATION LOGICc */}
       <Navbar bg="dark" expand="lg" variant="dark">
         <Navbar.Brand as={Link} to="/">
           Project Book
