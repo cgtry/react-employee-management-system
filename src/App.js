@@ -1,59 +1,65 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Page1 } from "./pages/Page1";
+import { Page2 } from "./pages/Page2";
+import { Page3 } from "./pages/Page3";
 
-import { useState } from "react";
-import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
-import { Member1 } from "./views/Member1";
-import { Member2 } from "./views/Member2";
-import { Member3 } from "./views/Member3";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import {
+  Button,
+  Form,
+  FormControl,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 
-// TEAM LEADER
 function App() {
   return (
     <Router>
+      {/** NAVIGATION LOGIC */}
+      <Navbar bg="dark" expand="lg" variant="dark">
+        <Navbar.Brand as={Link} to="/">
+          Project Book
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/page1">
+              Page1
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/page2">
+              Page2
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/page3">
+              Page3
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
       <Switch>
-        <Route path="/" exact>
-          <Member1 />
+        <Route path="/page1">
+          <Page1 />
         </Route>
 
-        <Route path="/page1" exact>
-          <Member1 />
+        <Route path="/page2">
+          <Page2 />
         </Route>
 
-        <Route path="/page2" exact>
-          <Member2 />
+        <Route path="/page3">
+          <Page3 />
         </Route>
 
-        <Route path="/page3" exact>
-          <Member3 />
+        <Route path="/">
+          <Page1 />
         </Route>
       </Switch>
     </Router>
-  );
-}
-
-function Page1() {
-  return (
-    <div>
-      <h1>Page1</h1>
-    </div>
-  );
-}
-
-function Page2() {
-  return (
-    <div>
-      <h1>Page2</h1>
-    </div>
-  );
-}
-
-function Page3() {
-  return (
-    <div>
-      <h1>Page3</h1>
-    </div>
   );
 }
 
